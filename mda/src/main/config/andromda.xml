@@ -71,6 +71,7 @@
                 //-->
             </properties>
         </namespace>
+        <!--
         <namespace name="webservice">
             <properties>
                 <property name="soapStack">xfire</property>
@@ -89,6 +90,7 @@
                 <property name="securityRealm">Realm</property>
             </properties>
         </namespace>
+        //-->
         <namespace name="java">
             <properties>
                 <property name="languageMappingsUri">file:${conf.dir}/mappings/JavaExtMappings.xml</property>
