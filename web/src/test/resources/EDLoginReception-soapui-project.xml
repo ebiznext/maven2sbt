@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="EDLoginReception" resourceRoot="" soapui-version="4.5.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="Z_BC_LOGIN_VERIF_SOAP12" type="wsdl" bindingName="{urn:sap-com:document:sap:rfc:functions}Z_BC_LOGIN_VERIF_SOAP12" soapVersion="1_2" anonymous="optional" definition="file:/Users/Shared/Projects/SCALAIO/maven2sbt/web/src/main/resources/conf/wsdl/E2D/reception/LoginReception.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/Shared/Projects/SCALAIO/maven2sbt/web/src/main/resources/conf/wsdl/E2D/reception/LoginReception.wsdl"><con:part><con:url>file:/Users/Shared/Projects/SCALAIO/maven2sbt/web/src/main/resources/conf/wsdl/E2D/reception/LoginReception.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_BN_Z_BC_LOGIN_VERIF">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic128Rsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+    <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN_BN_Z_BC_LOGIN_VERIF_SOAP12">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic128Rsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+    <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_IF_Z_BC_LOGIN_VERIF">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>001AA023F0CD1EE2879E9E5E765A75C3</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Z_BC_LOGIN_VERIF">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="Z_BC_LOGIN_VERIF">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="I_PASSWORD" type="tns:char255" minOccurs="0"/>
+            <xsd:element name="I_USERNAME" type="tns:char12" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Z_BC_LOGIN_VERIFResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="E_RETURN" type="tns:numeric1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Z_BC_LOGIN_VERIF">
+    <wsdl:part name="parameters" element="tns:Z_BC_LOGIN_VERIF"/>
+  </wsdl:message>
+  <wsdl:message name="Z_BC_LOGIN_VERIFResponse">
+    <wsdl:part name="parameter" element="tns:Z_BC_LOGIN_VERIFResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="Z_BC_LOGIN_VERIF">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem applicationComponent="BC"/>
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_IF_Z_BC_LOGIN_VERIF"/>
+    </wsp:Policy>
+    <wsdl:operation name="Z_BC_LOGIN_VERIF">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Z_BC_LOGIN_VERIF"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:Z_BC_LOGIN_VERIF"/>
+      <wsdl:output message="tns:Z_BC_LOGIN_VERIFResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Z_BC_LOGIN_VERIF" type="tns:Z_BC_LOGIN_VERIF">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_Z_BC_LOGIN_VERIF"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Z_BC_LOGIN_VERIF">
+      <soap:operation style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Z_BC_LOGIN_VERIF_SOAP12" type="tns:Z_BC_LOGIN_VERIF">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_Z_BC_LOGIN_VERIF_SOAP12"/>
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Z_BC_LOGIN_VERIF">
+      <wsoap12:operation style="document"/>
+      <wsdl:input>
+        <wsoap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Z_BC_LOGIN_VERIF">
+    <wsdl:port name="Z_BC_LOGIN_VERIF" binding="tns:Z_BC_LOGIN_VERIF">
+      <soap:address location="http://localhost:8102/sap/bc/srt/rfc/sap/z_bc_login_verif/120/z_bc_login_verif/z_bc_login_verif"/>
+    </wsdl:port>
+    <wsdl:port name="Z_BC_LOGIN_VERIF_SOAP12" binding="tns:Z_BC_LOGIN_VERIF_SOAP12">
+      <wsoap12:address location="http://localhost:8102/sap/bc/srt/rfc/sap/z_bc_login_verif/120/z_bc_login_verif/z_bc_login_verif"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8102/sap/bc/srt/rfc/sap/z_bc_login_verif/120/z_bc_login_verif/z_bc_login_verif</con:endpoint><con:endpoint>http://localhost:8088/mockEDLoginReceptionServiceSoap12Binding</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="Z_BC_LOGIN_VERIF" bindingOperationName="Z_BC_LOGIN_VERIF" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Identification valide"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockEDLoginReceptionServiceSoap12Binding</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soap:Header/>
+   <soap:Body>
+      <urn:Z_BC_LOGIN_VERIF>
+         <!--Optional:-->
+         <I_PASSWORD>aaaa</I_PASSWORD>
+         <!--Optional:-->
+         <I_USERNAME>aaaa</I_USERNAME>
+      </urn:Z_BC_LOGIN_VERIF>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/Z_BC_LOGIN_VERIF/Z_BC_LOGIN_VERIFRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Identification invalide"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockEDLoginReceptionServiceSoap12Binding</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soap:Header/>
+   <soap:Body>
+      <urn:Z_BC_LOGIN_VERIF>
+         <!--Optional:-->
+         <I_PASSWORD>cccc</I_PASSWORD>
+         <!--Optional:-->
+         <I_USERNAME>bbbb</I_USERNAME>
+      </urn:Z_BC_LOGIN_VERIF>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/Z_BC_LOGIN_VERIF/Z_BC_LOGIN_VERIFRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="Z_BC_LOGIN_VERIF" type="wsdl" bindingName="{urn:sap-com:document:sap:rfc:functions}Z_BC_LOGIN_VERIF" soapVersion="1_1" anonymous="optional" definition="file:/Users/Shared/Projects/SCALAIO/maven2sbt/web/src/main/resources/conf/wsdl/E2D/reception/LoginReception.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/Shared/Projects/SCALAIO/maven2sbt/web/src/main/resources/conf/wsdl/E2D/reception/LoginReception.wsdl"><con:part><con:url>file:/Users/Shared/Projects/SCALAIO/maven2sbt/web/src/main/resources/conf/wsdl/E2D/reception/LoginReception.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_BN_Z_BC_LOGIN_VERIF">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic128Rsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+    <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN_BN_Z_BC_LOGIN_VERIF_SOAP12">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic128Rsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+    <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_IF_Z_BC_LOGIN_VERIF">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>001AA023F0CD1EE2879E9E5E765A75C3</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Z_BC_LOGIN_VERIF">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="Z_BC_LOGIN_VERIF">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="I_PASSWORD" type="tns:char255" minOccurs="0"/>
+            <xsd:element name="I_USERNAME" type="tns:char12" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Z_BC_LOGIN_VERIFResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="E_RETURN" type="tns:numeric1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Z_BC_LOGIN_VERIF">
+    <wsdl:part name="parameters" element="tns:Z_BC_LOGIN_VERIF"/>
+  </wsdl:message>
+  <wsdl:message name="Z_BC_LOGIN_VERIFResponse">
+    <wsdl:part name="parameter" element="tns:Z_BC_LOGIN_VERIFResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="Z_BC_LOGIN_VERIF">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem applicationComponent="BC"/>
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_IF_Z_BC_LOGIN_VERIF"/>
+    </wsp:Policy>
+    <wsdl:operation name="Z_BC_LOGIN_VERIF">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Z_BC_LOGIN_VERIF"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:Z_BC_LOGIN_VERIF"/>
+      <wsdl:output message="tns:Z_BC_LOGIN_VERIFResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Z_BC_LOGIN_VERIF" type="tns:Z_BC_LOGIN_VERIF">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_Z_BC_LOGIN_VERIF"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Z_BC_LOGIN_VERIF">
+      <soap:operation style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Z_BC_LOGIN_VERIF_SOAP12" type="tns:Z_BC_LOGIN_VERIF">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_Z_BC_LOGIN_VERIF_SOAP12"/>
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Z_BC_LOGIN_VERIF">
+      <wsoap12:operation style="document"/>
+      <wsdl:input>
+        <wsoap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Z_BC_LOGIN_VERIF">
+    <wsdl:port name="Z_BC_LOGIN_VERIF" binding="tns:Z_BC_LOGIN_VERIF">
+      <soap:address location="http://localhost:8102/sap/bc/srt/rfc/sap/z_bc_login_verif/120/z_bc_login_verif/z_bc_login_verif"/>
+    </wsdl:port>
+    <wsdl:port name="Z_BC_LOGIN_VERIF_SOAP12" binding="tns:Z_BC_LOGIN_VERIF_SOAP12">
+      <wsoap12:address location="http://localhost:8102/sap/bc/srt/rfc/sap/z_bc_login_verif/120/z_bc_login_verif/z_bc_login_verif"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8102/sap/bc/srt/rfc/sap/z_bc_login_verif/120/z_bc_login_verif/z_bc_login_verif</con:endpoint><con:endpoint>http://smanciot.home:8088/mockEDLoginReceptionServiceSoapBinding</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="Z_BC_LOGIN_VERIF" bindingOperationName="Z_BC_LOGIN_VERIF" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Identification valide"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://smanciot.home:8088/mockEDLoginReceptionServiceSoapBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:Z_BC_LOGIN_VERIF>
+         <!--Optional:-->
+         <I_PASSWORD>aaaa</I_PASSWORD>
+         <!--Optional:-->
+         <I_USERNAME>aaaa</I_USERNAME>
+      </urn:Z_BC_LOGIN_VERIF>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/Z_BC_LOGIN_VERIF/Z_BC_LOGIN_VERIFRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Identification invalide"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://smanciot.home:8088/mockEDLoginReceptionServiceSoapBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:Z_BC_LOGIN_VERIF>
+         <!--Optional:-->
+         <I_PASSWORD>bbbb</I_PASSWORD>
+         <!--Optional:-->
+         <I_USERNAME>bbbb</I_USERNAME>
+      </urn:Z_BC_LOGIN_VERIF>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/Z_BC_LOGIN_VERIF/Z_BC_LOGIN_VERIFRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockEDLoginReceptionServiceSoap12Binding" host="localhost" name="Z_BC_LOGIN_VERIF_SOAP12 MockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="Z_BC_LOGIN_VERIF" interface="Z_BC_LOGIN_VERIF_SOAP12" operation="Z_BC_LOGIN_VERIF"><con:settings/><con:dispatchStyle>QUERY_MATCH</con:dispatchStyle><con:defaultResponse>Identification invalide</con:defaultResponse><con:response name="Identification valide" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soap:Header/>
+   <soap:Body>
+      <urn:Z_BC_LOGIN_VERIFResponse>
+         <E_RETURN>1</E_RETURN>
+      </urn:Z_BC_LOGIN_VERIFResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/Z_BC_LOGIN_VERIF/Z_BC_LOGIN_VERIFResponse"/></con:response><con:response name="Identification invalide" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soap:Header/>
+   <soap:Body>
+      <urn:Z_BC_LOGIN_VERIFResponse>
+         <E_RETURN>0</E_RETURN>
+      </urn:Z_BC_LOGIN_VERIFResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/Z_BC_LOGIN_VERIF/Z_BC_LOGIN_VERIFResponse"/></con:response><con:dispatchConfig xsi:type="con:MockOperationQueryMatchDispatch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:query><con:name>AAAA</con:name><con:query>declare namespace urn="urn:sap-com:document:sap:rfc:functions"
+//urn:Z_BC_LOGIN_VERIF/I_USERNAME/text()</con:query><con:match>aaaa</con:match><con:response>Identification valide</con:response></con:query></con:dispatchConfig></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockEDLoginReceptionServiceSoapBinding" host="smanciot.home" name="Z_BC_LOGIN_VERIF MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="Z_BC_LOGIN_VERIF" interface="Z_BC_LOGIN_VERIF" operation="Z_BC_LOGIN_VERIF"><con:settings/><con:dispatchStyle>QUERY_MATCH</con:dispatchStyle><con:defaultResponse>Identification invalide</con:defaultResponse><con:response name="Identification valide" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:Z_BC_LOGIN_VERIFResponse>
+         <E_RETURN>1</E_RETURN>
+      </urn:Z_BC_LOGIN_VERIFResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/Z_BC_LOGIN_VERIF/Z_BC_LOGIN_VERIFResponse"/></con:response><con:response name="Identification invalide" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:Z_BC_LOGIN_VERIFResponse>
+         <E_RETURN>0</E_RETURN>
+      </urn:Z_BC_LOGIN_VERIFResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/Z_BC_LOGIN_VERIF/Z_BC_LOGIN_VERIFResponse"/></con:response><con:dispatchConfig xsi:type="con:MockOperationQueryMatchDispatch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:query><con:name>AAAA</con:name><con:query>declare namespace urn="urn:sap-com:document:sap:rfc:functions"
+//urn:Z_BC_LOGIN_VERIF/I_USERNAME/text()	</con:query><con:match>aaaa</con:match><con:response>Identification valide</con:response></con:query></con:dispatchConfig></con:mockOperation><con:properties/></con:mockService><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>

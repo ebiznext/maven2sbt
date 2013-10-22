@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="EDListeFournisseurs" resourceRoot="" soapui-version="4.5.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ZWS_MM_I899_GET_FOURNISSEUR_SOAP12" type="wsdl" bindingName="{urn:sap-com:document:sap:rfc:functions}ZWS_MM_I899_GET_FOURNISSEUR_SOAP12" soapVersion="1_2" anonymous="optional" definition="file:/Users/Shared/Projects/SCALAIO/maven2sbt/web/src/main/resources/conf/wsdl/E2D/reception/ListerFournisseurs.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8102/sap/bc/srt/rfc/sap/zws_mm_i899_get_fournisseur/120/zws_mm_i899_get_fournisseur/zws_mm_i899_get_fournisseur</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="Z_MM_I899_GET_FOURNISSEUR" bindingOperationName="Z_MM_I899_GET_FOURNISSEUR" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8102/sap/bc/srt/rfc/sap/zws_mm_i899_get_fournisseur/120/zws_mm_i899_get_fournisseur/zws_mm_i899_get_fournisseur</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soap:Header/>
+   <soap:Body>
+      <urn:Z_MM_I899_GET_FOURNISSEUR>
+         <I_SELECT_OIA>?</I_SELECT_OIA>
+      </urn:Z_MM_I899_GET_FOURNISSEUR>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/ZWS_MM_I899_GET_FOURNISSEUR/Z_MM_I899_GET_FOURNISSEURRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ZWS_MM_I899_GET_FOURNISSEUR" type="wsdl" bindingName="{urn:sap-com:document:sap:rfc:functions}ZWS_MM_I899_GET_FOURNISSEUR" soapVersion="1_1" anonymous="optional" definition="file:/Users/Shared/Projects/SCALAIO/maven2sbt/web/src/main/resources/conf/wsdl/E2D/reception/ListerFournisseurs.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/Shared/Projects/SCALAIO/maven2sbt/web/src/main/resources/conf/wsdl/E2D/reception/ListerFournisseurs.wsdl"><con:part><con:url>file:/Users/Shared/Projects/SCALAIO/maven2sbt/web/src/main/resources/conf/wsdl/E2D/reception/ListerFournisseurs.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_BN_ZWS_MM_I899_GET_FOURNISSEUR">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sapsp:HTTPSSO2/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic128Rsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+    <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN_BN_ZWS_MM_I899_GET_FOURNISSEUR_SOAP12">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sapsp:HTTPSSO2/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic128Rsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+    <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_IF_ZWS_MM_I899_GET_FOURNISSEUR">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>001AA023F0CD1EE2879E9E5E765A75C3</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Z_MM_I899_GET_FOURNISSEUR">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char32">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="32"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char35">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="35"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZSMM_I899_LIF_LIST">
+        <xsd:sequence>
+          <xsd:element name="LIFNR" type="tns:char10"/>
+          <xsd:element name="NAME1" type="tns:char35"/>
+          <xsd:element name="EBELN" type="tns:char10"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BAPIRET2">
+        <xsd:sequence>
+          <xsd:element name="TYPE" type="tns:char1"/>
+          <xsd:element name="ID" type="tns:char20"/>
+          <xsd:element name="NUMBER" type="tns:numeric3"/>
+          <xsd:element name="MESSAGE" type="tns:char220"/>
+          <xsd:element name="LOG_NO" type="tns:char20"/>
+          <xsd:element name="LOG_MSG_NO" type="tns:numeric6"/>
+          <xsd:element name="MESSAGE_V1" type="tns:char50"/>
+          <xsd:element name="MESSAGE_V2" type="tns:char50"/>
+          <xsd:element name="MESSAGE_V3" type="tns:char50"/>
+          <xsd:element name="MESSAGE_V4" type="tns:char50"/>
+          <xsd:element name="PARAMETER" type="tns:char32"/>
+          <xsd:element name="ROW" type="xsd:int"/>
+          <xsd:element name="FIELD" type="tns:char30"/>
+          <xsd:element name="SYSTEM" type="tns:char10"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTMM_I899_LIF_LIST">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:ZSMM_I899_LIF_LIST" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BAPIRET2_T">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:BAPIRET2" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Z_MM_I899_GET_FOURNISSEUR">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="I_SELECT_OIA" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Z_MM_I899_GET_FOURNISSEURResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="E_LIF_LIST" type="tns:ZTMM_I899_LIF_LIST"/>
+            <xsd:element name="E_RETURN" type="tns:BAPIRET2_T"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Z_MM_I899_GET_FOURNISSEUR">
+    <wsdl:part name="parameters" element="tns:Z_MM_I899_GET_FOURNISSEUR"/>
+  </wsdl:message>
+  <wsdl:message name="Z_MM_I899_GET_FOURNISSEURResponse">
+    <wsdl:part name="parameter" element="tns:Z_MM_I899_GET_FOURNISSEURResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWS_MM_I899_GET_FOURNISSEUR">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem docURL="http://localhost:8102/sap/bc/esdt/docu/sd_text?sap-client=120&amp;sd_name=ZWS_MM_I899_GET_FOURNISSEUR"/>
+        <sapdoc:docitem applicationComponent="MM"/>
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_IF_ZWS_MM_I899_GET_FOURNISSEUR"/>
+    </wsp:Policy>
+    <wsdl:operation name="Z_MM_I899_GET_FOURNISSEUR">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Z_MM_I899_GET_FOURNISSEUR"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:Z_MM_I899_GET_FOURNISSEUR"/>
+      <wsdl:output message="tns:Z_MM_I899_GET_FOURNISSEURResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWS_MM_I899_GET_FOURNISSEUR" type="tns:ZWS_MM_I899_GET_FOURNISSEUR">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_ZWS_MM_I899_GET_FOURNISSEUR"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Z_MM_I899_GET_FOURNISSEUR">
+      <soap:operation style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZWS_MM_I899_GET_FOURNISSEUR_SOAP12" type="tns:ZWS_MM_I899_GET_FOURNISSEUR">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_ZWS_MM_I899_GET_FOURNISSEUR_SOAP12"/>
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Z_MM_I899_GET_FOURNISSEUR">
+      <wsoap12:operation style="document"/>
+      <wsdl:input>
+        <wsoap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWS_MM_I899_GET_FOURNISSEUR">
+    <wsdl:port name="ZWS_MM_I899_GET_FOURNISSEUR" binding="tns:ZWS_MM_I899_GET_FOURNISSEUR">
+      <soap:address location="http://localhost:8102/sap/bc/srt/rfc/sap/zws_mm_i899_get_fournisseur/120/zws_mm_i899_get_fournisseur/zws_mm_i899_get_fournisseur"/>
+    </wsdl:port>
+    <wsdl:port name="ZWS_MM_I899_GET_FOURNISSEUR_SOAP12" binding="tns:ZWS_MM_I899_GET_FOURNISSEUR_SOAP12">
+      <wsoap12:address location="http://localhost:8102/sap/bc/srt/rfc/sap/zws_mm_i899_get_fournisseur/120/zws_mm_i899_get_fournisseur/zws_mm_i899_get_fournisseur"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8102/sap/bc/srt/rfc/sap/zws_mm_i899_get_fournisseur/120/zws_mm_i899_get_fournisseur/zws_mm_i899_get_fournisseur</con:endpoint><con:endpoint>http://Smanciot.local:8088/mockEDListeFournisseursServiceSoapBinding</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="Z_MM_I899_GET_FOURNISSEUR" bindingOperationName="Z_MM_I899_GET_FOURNISSEUR" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request OK"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://Smanciot.local:8088/mockEDListeFournisseursServiceSoapBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:Z_MM_I899_GET_FOURNISSEUR>
+         <I_SELECT_OIA>024X.TNR017</I_SELECT_OIA>
+      </urn:Z_MM_I899_GET_FOURNISSEUR>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/ZWS_MM_I899_GET_FOURNISSEUR/Z_MM_I899_GET_FOURNISSEURRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request KO"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://Smanciot.local:8088/mockEDListeFournisseursServiceSoapBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:Z_MM_I899_GET_FOURNISSEUR>
+         <I_SELECT_OIA>024X.000000</I_SELECT_OIA>
+      </urn:Z_MM_I899_GET_FOURNISSEUR>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/ZWS_MM_I899_GET_FOURNISSEUR/Z_MM_I899_GET_FOURNISSEURRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockEDListeFournisseursServiceSoapBinding" host="Smanciot.local" name="ZWS_MM_I899_GET_FOURNISSEUR MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="Z_MM_I899_GET_FOURNISSEUR" interface="ZWS_MM_I899_GET_FOURNISSEUR" operation="Z_MM_I899_GET_FOURNISSEUR"><con:settings/><con:dispatchStyle>QUERY_MATCH</con:dispatchStyle><con:defaultResponse>Response KO</con:defaultResponse><con:response name="Reponse OK" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:Z_MM_I899_GET_FOURNISSEURResponse>
+         <E_LIF_LIST>
+            <item>
+               <LIFNR>0000300051</LIFNR>
+               <NAME1>MAILLET FRANCIS COMPETITION</NAME1>
+               <EBELN>1000003371</EBELN>
+            </item>
+            <item>
+               <LIFNR>0000300521</LIFNR>
+               <NAME1>BAUDOUX PROLIANS</NAME1>
+               <EBELN>1000003372</EBELN>
+            </item>
+            <item>
+               <LIFNR>0000300521</LIFNR>
+               <NAME1>BAUDOUX PROLIANS</NAME1>
+               <EBELN>1000003375</EBELN>
+            </item>
+         </E_LIF_LIST>
+      </urn:Z_MM_I899_GET_FOURNISSEURResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/ZWS_MM_I899_GET_FOURNISSEUR/Z_MM_I899_GET_FOURNISSEURResponse"/></con:response><con:response name="Response KO" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:Z_MM_I899_GET_FOURNISSEURResponse>
+         <E_LIF_LIST>
+         </E_LIF_LIST>
+      </urn:Z_MM_I899_GET_FOURNISSEURResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/ZWS_MM_I899_GET_FOURNISSEUR/Z_MM_I899_GET_FOURNISSEURResponse"/></con:response><con:dispatchConfig xsi:type="con:MockOperationQueryMatchDispatch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:query><con:name>024X.TNR017</con:name><con:query>declare namespace urn="urn:sap-com:document:sap:rfc:functions"
+//urn:Z_MM_I899_GET_FOURNISSEUR/I_SELECT_OIA/text()	</con:query><con:match>024X.TNR017</con:match><con:response>Reponse OK</con:response></con:query></con:dispatchConfig></con:mockOperation><con:properties/></con:mockService><con:properties/><con:wssContainer/></con:soapui-project>

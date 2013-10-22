@@ -1,0 +1,385 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ebiznext.sbt</groupId>
+		<artifactId>sample</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<groupId>com.ebiznext.sbt.sample</groupId>
+	<artifactId>web</artifactId>
+	<packaging>war</packaging>
+	<name>sample-web</name>
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+        <dependency>
+        	<groupId>${project.groupId}</groupId>
+			<artifactId>common</artifactId>
+			<version>${project.version}</version>
+        </dependency>
+        <dependency>
+        	<groupId>${project.groupId}</groupId>
+			<artifactId>core</artifactId>
+			<version>${project.version}</version>
+        </dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+		<!-- test -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient-cache</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>fluent-hc</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- jetty -->
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- groovy
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<scope>test</scope>
+		</dependency>
+		 -->
+
+		<!-- http builder -->
+		<dependency>
+			<groupId>org.codehaus.groovy.modules.http-builder</groupId>
+			<artifactId>http-builder</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- nekohtml -->
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<finalName>sample</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
+			<!-- jetty plugin -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<configuration>
+					<webAppSourceDirectory>${project.basedir}/src/main/webapp</webAppSourceDirectory>
+					<useTestScope>true</useTestScope>
+					<webApp>
+						<contextPath>${contextPath}</contextPath>
+						<descriptor>${project.basedir}/src/test/resources/WEB-INF/web.xml</descriptor>
+					</webApp>
+					<stopKey>stop</stopKey>
+					<stopPort>${jetty.stopPort}</stopPort>
+					<systemProperties>
+						<systemProperty>
+							<name>jetty.port</name>
+							<value>${jetty.port}</value>
+						</systemProperty>
+						<systemProperty>
+							<name>sample.properties</name>
+							<value>${project.build.directory}/sample.properties</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+			</plugin>
+
+			<!-- soapui plugin -->
+			<plugin>
+				<groupId>eviware</groupId>
+				<artifactId>maven-soapui-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>proxyEDLoginReception</id>
+						<phase>process-test-classes</phase>
+						<goals>
+							<goal>mock</goal>
+						</goals>
+						<configuration>
+							<projectFile>${project.basedir}/src/test/resources/EDLoginReception-soapui-project.xml</projectFile>
+							<port>${loginReceptionPort}</port>
+							<noBlock>true</noBlock>
+						</configuration>
+					</execution>
+					<execution>
+						<id>proxyEDValiderCodeOIA</id>
+						<phase>process-test-classes</phase>
+						<goals>
+							<goal>mock</goal>
+						</goals>
+						<configuration>
+							<projectFile>${project.basedir}/src/test/resources/EDValidationCodeOIA-soapui-project.xml</projectFile>
+							<port>${validationCodeOIAPort}</port>
+							<noBlock>true</noBlock>
+						</configuration>
+					</execution>
+					<execution>
+						<id>proxyEDListerFournisseurs</id>
+						<phase>process-test-classes</phase>
+						<goals>
+							<goal>mock</goal>
+						</goals>
+						<configuration>
+							<projectFile>${project.basedir}/src/test/resources/EDListeFournisseurs-soapui-project.xml</projectFile>
+							<port>${listeFournisseursPort}</port>
+							<noBlock>true</noBlock>
+						</configuration>
+					</execution>
+					<execution>
+						<id>proxyEDListerReceptionsFournisseur</id>
+						<phase>process-test-classes</phase>
+						<goals>
+							<goal>mock</goal>
+						</goals>
+						<configuration>
+							<projectFile>${project.basedir}/src/test/resources/EDListeReceptionsFournisseur-soapui-project.xml</projectFile>
+							<port>${listeReceptionsFournisseurPort}</port>
+							<noBlock>true</noBlock>
+						</configuration>
+					</execution>
+					<execution>
+						<id>proxyEDListerReceptions</id>
+						<phase>process-test-classes</phase>
+						<goals>
+							<goal>mock</goal>
+						</goals>
+						<configuration>
+							<projectFile>${project.basedir}/src/test/resources/EDListeReceptions-soapui-project.xml</projectFile>
+							<port>${listeReceptionsPort}</port>
+							<noBlock>true</noBlock>
+						</configuration>
+					</execution>
+					<execution>
+						<id>proxyEDReceptionCommande</id>
+						<phase>process-test-classes</phase>
+						<goals>
+							<goal>mock</goal>
+						</goals>
+						<configuration>
+							<projectFile>${project.basedir}/src/test/resources/EDReceptionCommande-soapui-project.xml</projectFile>
+							<port>${receptionCommandePort}</port>
+							<noBlock>true</noBlock>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- build-helper-maven-plugin -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src/main/groovy</source>
+								<source>src/test/groovy</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- gmaven-plugin -->
+			<plugin>
+				<groupId>org.codehaus.gmaven</groupId>
+				<artifactId>gmaven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>com.googlecode.velocity-maven-plugin</groupId>
+				<artifactId>velocity-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>update-test-properties</id>
+						<phase>generate-test-resources</phase>
+						<goals>
+							<goal>velocity</goal>
+						</goals>
+						<configuration>
+							<!-- <outputDirectory>${project.build.directory}</outputDirectory> -->
+							<encoding>utf-8</encoding>
+							<templateFiles>
+								<directory>./src/test/resources</directory>
+								<includes>
+									<include>sample.properties</include>
+									<include>*.wsdl</include>
+								</includes>
+							</templateFiles>
+							<templateValues>
+								<property>
+									<name>loginReceptionPort</name>
+									<value>${loginReceptionPort}</value>
+								</property>
+								<property>
+									<name>validationCodeOIAPort</name>
+									<value>${validationCodeOIAPort}</value>
+								</property>
+								<property>
+									<name>listeFournisseursPort</name>
+									<value>${listeFournisseursPort}</value>
+								</property>
+								<property>
+									<name>listeReceptionsFournisseurPort</name>
+									<value>${listeReceptionsFournisseurPort}</value>
+								</property>
+								<property>
+									<name>listeReceptionsPort</name>
+									<value>${listeReceptionsPort}</value>
+								</property>
+								<property>
+									<name>receptionCommandePort</name>
+									<value>${receptionCommandePort}</value>
+								</property>
+								<property>
+									<name>wsdlDirectory</name>
+									<value>${project.build.directory}</value>
+								</property>
+							</templateValues>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- maven-failsafe-plugin -->
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<configuration>
+					<argLine>${it.failsafe.argLine}</argLine>
+					<systemPropertyVariables>
+						<sample.port>${jetty.port}</sample.port>
+					</systemPropertyVariables>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<executions>
+					<execution>
+					    <id>prepare-agent</id>
+					    <phase>pre-integration-test</phase>
+					    <goals>
+					        <goal>prepare-agent</goal>
+					    </goals>
+					    <configuration>
+                            <propertyName>it.failsafe.argLine</propertyName>
+                            <destFile>${it.jacoco.destFile}</destFile>
+                        </configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+            </plugin>
+
+
+		</plugins>
+	</build>
+
+  	<properties>
+		<jetty.port>8080</jetty.port>
+		<jetty.stopPort>9080</jetty.stopPort>
+		<contextPath>/${project.build.finalName}</contextPath>
+
+		<loginReceptionPort>9001</loginReceptionPort>
+		<validationCodeOIAPort>9002</validationCodeOIAPort>
+		<listeFournisseursPort>9003</listeFournisseursPort>
+		<listeReceptionsFournisseurPort>9004</listeReceptionsFournisseurPort>
+		<listeReceptionsPort>9005</listeReceptionsPort>
+		<receptionCommandePort>9006</receptionCommandePort>
+		<it.jacoco.destFile>${project.build.directory}/jacoco-it.exec</it.jacoco.destFile>
+		<!--<sonar.jacoco.reportPath>${it.jacoco.destFile}</sonar.jacoco.reportPath>-->
+		<sonar.jacoco.itReportPath>${it.jacoco.destFile}</sonar.jacoco.itReportPath>
+        <sonar.junit.reportsPath>${project.build.directory}/failsafe-reports</sonar.junit.reportsPath>
+        <sonar.surefire.reportsPath>${project.build.directory}/failsafe-reports</sonar.surefire.reportsPath>
+	</properties>
+</project>

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions targetNamespace="urn:sap-com:document:sap:rfc:functions"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+	<wsdl:documentation>
+		<sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+	</wsdl:documentation>
+	<wsp:UsingPolicy wsdl:required="true" />
+	<wsp:Policy wsu:Id="BN_BN_ZWS_MM_I899_GET_CMD_LIST_LIFNR">
+		<saptrnbnd:OptimizedXMLTransfer
+			uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"
+			wsp:Optional="true" />
+		<saptrnbnd:OptimizedMimeSerialization
+			xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"
+			wsp:Optional="true" />
+		<sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false
+		</sapattahnd:Enabled>
+		<wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+			<wsp:All>
+				<sp:TransportBinding
+					xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+					xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy"
+					xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512"
+					xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility"
+					xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+					<wsp:Policy>
+						<sp:TransportToken>
+							<wsp:Policy>
+								<sp:HttpsToken>
+									<wsp:Policy>
+										<sp:HttpBasicAuthentication />
+									</wsp:Policy>
+								</sp:HttpsToken>
+							</wsp:Policy>
+						</sp:TransportToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic128Rsa15 />
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Strict />
+							</wsp:Policy>
+						</sp:Layout>
+					</wsp:Policy>
+				</sp:TransportBinding>
+			</wsp:All>
+		</wsp:ExactlyOne>
+		<wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+			wsp:Optional="true" />
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="BN_BN_ZWS_MM_I899_GET_CMD_LIST_LIFNR_SOAP12">
+		<saptrnbnd:OptimizedXMLTransfer
+			uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"
+			wsp:Optional="true" />
+		<saptrnbnd:OptimizedMimeSerialization
+			xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"
+			wsp:Optional="true" />
+		<sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false
+		</sapattahnd:Enabled>
+		<wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+			<wsp:All>
+				<sp:TransportBinding
+					xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+					xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy"
+					xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512"
+					xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility"
+					xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+					<wsp:Policy>
+						<sp:TransportToken>
+							<wsp:Policy>
+								<sp:HttpsToken>
+									<wsp:Policy>
+										<sp:HttpBasicAuthentication />
+									</wsp:Policy>
+								</sp:HttpsToken>
+							</wsp:Policy>
+						</sp:TransportToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic128Rsa15 />
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Strict />
+							</wsp:Policy>
+						</sp:Layout>
+					</wsp:Policy>
+				</sp:TransportBinding>
+			</wsp:All>
+		</wsp:ExactlyOne>
+		<wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+			wsp:Optional="true" />
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="IF_IF_ZWS_MM_I899_GET_CMD_LIST_LIFNR">
+		<sapsession:Session
+			xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+			<sapsession:enableSession>false</sapsession:enableSession>
+		</sapsession:Session>
+		<sapcentraladmin:CentralAdministration
+			xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/"
+			wsp:Optional="true">
+			<sapcentraladmin:BusinessApplicationID>001AA023F0CD1EE2879E9E5E765A75C3
+			</sapcentraladmin:BusinessApplicationID>
+		</sapcentraladmin:CentralAdministration>
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="OP_IF_OP_Z_MM_I899_GET_CMD_LIST_LIFNR">
+		<sapcomhnd:enableCommit
+			xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+		<sapblock:enableBlocking
+			xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+		<saptrhnw05:required
+			xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+		<saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false
+		</saprmnw05:enableWSRM>
+	</wsp:Policy>
+	<wsdl:types>
+		<xsd:schema attributeFormDefault="qualified"
+			targetNamespace="urn:sap-com:document:sap:rfc:functions">
+			<xsd:simpleType name="char1">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="1" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="char10">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="10" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="char20">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="20" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="char220">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="220" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="char24">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="24" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="char25">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="25" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="char30">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="30" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="char32">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="32" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="char35">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="35" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="char4">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="4" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="char40">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="40" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="char50">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="50" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="cuky5">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="5" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="curr13.2">
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="13" />
+					<xsd:fractionDigits value="2" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="date">
+				<xsd:restriction base="xsd:date">
+					<xsd:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="decimal3.1">
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="3" />
+					<xsd:fractionDigits value="1" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="numeric3">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="3" />
+					<xsd:pattern value="\d*" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="numeric5">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="5" />
+					<xsd:pattern value="\d*" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="numeric6">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="6" />
+					<xsd:pattern value="\d*" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="quantum13.3">
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="13" />
+					<xsd:fractionDigits value="3" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="unit3">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="3" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ZSMM_I899_CMD_DATA">
+				<xsd:sequence>
+					<xsd:element name="BUKRS" type="tns:char4" />
+					<xsd:element name="EBELN" type="tns:char10" />
+					<xsd:element name="OIATEXT" type="tns:char40" />
+					<xsd:element name="LIFNR" type="tns:char10" />
+					<xsd:element name="NAME1" type="tns:char35" />
+					<xsd:element name="ORT01" type="tns:char25" />
+					<xsd:element name="NETWR" type="tns:curr13.2" />
+					<xsd:element name="WAERS" type="tns:cuky5" />
+					<xsd:element name="LINE_DETAIL" type="tns:ZTMM_I899_ITEM_DATA" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ZSMM_I899_ITEM_DATA">
+				<xsd:sequence>
+					<xsd:element name="EBELP" type="tns:numeric5" />
+					<xsd:element name="EINDT" type="tns:date" />
+					<xsd:element name="NETWR" type="tns:curr13.2" />
+					<xsd:element name="WAERS" type="tns:cuky5" />
+					<xsd:element name="TXZ01" type="tns:char40" />
+					<xsd:element name="KNTXT" type="tns:char24" />
+					<xsd:element name="OIATEXT" type="tns:char40" />
+					<xsd:element name="MENGE" type="tns:quantum13.3" />
+					<xsd:element name="MENGE_RCP" type="tns:quantum13.3" />
+					<xsd:element name="MENGE_RAL" type="tns:quantum13.3" />
+					<xsd:element name="MEINS" type="tns:unit3" />
+					<xsd:element name="UEBTO" type="tns:decimal3.1" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="BAPIRET2">
+				<xsd:sequence>
+					<xsd:element name="TYPE" type="tns:char1" />
+					<xsd:element name="ID" type="tns:char20" />
+					<xsd:element name="NUMBER" type="tns:numeric3" />
+					<xsd:element name="MESSAGE" type="tns:char220" />
+					<xsd:element name="LOG_NO" type="tns:char20" />
+					<xsd:element name="LOG_MSG_NO" type="tns:numeric6" />
+					<xsd:element name="MESSAGE_V1" type="tns:char50" />
+					<xsd:element name="MESSAGE_V2" type="tns:char50" />
+					<xsd:element name="MESSAGE_V3" type="tns:char50" />
+					<xsd:element name="MESSAGE_V4" type="tns:char50" />
+					<xsd:element name="PARAMETER" type="tns:char32" />
+					<xsd:element name="ROW" type="xsd:int" />
+					<xsd:element name="FIELD" type="tns:char30" />
+					<xsd:element name="SYSTEM" type="tns:char10" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ZTMM_I899_CMD_DATA">
+				<xsd:sequence>
+					<xsd:element name="item" type="tns:ZSMM_I899_CMD_DATA"
+						minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ZTMM_I899_ITEM_DATA">
+				<xsd:sequence>
+					<xsd:element name="item" type="tns:ZSMM_I899_ITEM_DATA"
+						minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="BAPIRET2_T">
+				<xsd:sequence>
+					<xsd:element name="item" type="tns:BAPIRET2" minOccurs="0"
+						maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="Z_MM_I899_GET_CMD_LIST_LIFNR">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="I_LIFNR" type="tns:char10" />
+						<xsd:element name="I_STR_OIA" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Z_MM_I899_GET_CMD_LIST_LIFNRResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="E_CMD_TABLE" type="tns:ZTMM_I899_CMD_DATA" />
+						<xsd:element name="E_MSG_RETURN" type="tns:BAPIRET2_T" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="Z_MM_I899_GET_CMD_LIST_LIFNR">
+		<wsdl:part name="parameters" element="tns:Z_MM_I899_GET_CMD_LIST_LIFNR" />
+	</wsdl:message>
+	<wsdl:message name="Z_MM_I899_GET_CMD_LIST_LIFNRResponse">
+		<wsdl:part name="parameter" element="tns:Z_MM_I899_GET_CMD_LIST_LIFNRResponse" />
+	</wsdl:message>
+	<wsdl:portType name="ZWS_MM_I899_GET_CMD_LIST_LIFNR">
+		<wsdl:documentation>
+			<sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+				<sapdoc:docitem
+					docURL="http://localhost:8102/sap/bc/esdt/docu/sd_text?sap-client=120&amp;sd_name=ZWS_MM_I899_GET_CMD_LIST_LIFNR" />
+				<sapdoc:docitem applicationComponent="MM" />
+			</sapdoc:sapdoc>
+		</wsdl:documentation>
+		<wsp:Policy>
+			<wsp:PolicyReference URI="#IF_IF_ZWS_MM_I899_GET_CMD_LIST_LIFNR" />
+		</wsp:Policy>
+		<wsdl:operation name="Z_MM_I899_GET_CMD_LIST_LIFNR">
+			<wsp:Policy>
+				<wsp:PolicyReference URI="#OP_IF_OP_Z_MM_I899_GET_CMD_LIST_LIFNR" />
+			</wsp:Policy>
+			<wsdl:input message="tns:Z_MM_I899_GET_CMD_LIST_LIFNR" />
+			<wsdl:output message="tns:Z_MM_I899_GET_CMD_LIST_LIFNRResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ZWS_MM_I899_GET_CMD_LIST_LIFNR" type="tns:ZWS_MM_I899_GET_CMD_LIST_LIFNR">
+		<wsp:Policy>
+			<wsp:PolicyReference URI="#BN_BN_ZWS_MM_I899_GET_CMD_LIST_LIFNR" />
+		</wsp:Policy>
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+		<wsdl:operation name="Z_MM_I899_GET_CMD_LIST_LIFNR">
+			<soap:operation style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="ZWS_MM_I899_GET_CMD_LIST_LIFNR_SOAP12"
+		type="tns:ZWS_MM_I899_GET_CMD_LIST_LIFNR">
+		<wsp:Policy>
+			<wsp:PolicyReference URI="#BN_BN_ZWS_MM_I899_GET_CMD_LIST_LIFNR_SOAP12" />
+		</wsp:Policy>
+		<wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+		<wsdl:operation name="Z_MM_I899_GET_CMD_LIST_LIFNR">
+			<wsoap12:operation style="document" />
+			<wsdl:input>
+				<wsoap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<wsoap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ZWS_MM_I899_GET_CMD_LIST_LIFNR">
+		<wsdl:port name="ZWS_MM_I899_GET_CMD_LIST_LIFNR" binding="tns:ZWS_MM_I899_GET_CMD_LIST_LIFNR">
+			<soap:address
+				location="http://localhost:${listeReceptionsFournisseurPort}/mockEDListeReceptionsFournisseurServiceSoapBinding" />
+		</wsdl:port>
+		<wsdl:port name="ZWS_MM_I899_GET_CMD_LIST_LIFNR_SOAP12"
+			binding="tns:ZWS_MM_I899_GET_CMD_LIST_LIFNR_SOAP12">
+			<wsoap12:address
+				location="http://localhost:${listeReceptionsFournisseurPort}/mockEDListeReceptionsFournisseurServiceSoap12Binding" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

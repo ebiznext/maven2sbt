@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/1.0.0/UML" xmi:id="_15_5_1_f20035f_1230031347322_997125_1439" name="mapping" metamodelReference="_15_5_1_f20035f_1230031347322_997125_1439_packageImportcreatedOnLoad">
+  <eAnnotations xmi:id="_Jpr3pTV2EeOyxYxsSYU4rQ" source="attributes">
+    <details xmi:id="_Jpr3pjV2EeOyxYxsSYU4rQ" key="version" value="0"/>
+  </eAnnotations>
+  <eAnnotations xmi:id="_Jpr3pzV2EeOyxYxsSYU4rQ" source="ePackages">
+    <contents xmi:type="ecore:EPackage" xmi:id="_Jpr3qDV2EeOyxYxsSYU4rQ" name="mapping_0" nsURI="http:///mapping_0_JbbZADV2EeOyxYxsSYU4rQ.profile.uml2" nsPrefix="mapping_0">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_Jpr3qTV2EeOyxYxsSYU4rQ" name="mapping__FrontEndMapping">
+        <eAnnotations xmi:id="_Jpr3qjV2EeOyxYxsSYU4rQ" source="stereotype" references="_15_5_1_f20035f_1230031347322_391318_1440"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_Jpr3qzV2EeOyxYxsSYU4rQ" name="_andromdajcfmappingtoModel" ordered="false" lowerBound="1" defaultValueLiteral="">
+          <eAnnotations xmi:id="_Jpr3rDV2EeOyxYxsSYU4rQ" source="http://www.eclipse.org/emf/2002/GenModel">
+            <details xmi:id="_Jpr3rTV2EeOyxYxsSYU4rQ" key="documentation" value="Indicates the mapping from view to model."/>
+          </eAnnotations>
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_Jpr3rjV2EeOyxYxsSYU4rQ" name="_andromdajcfmappingtoView" ordered="false" lowerBound="1" defaultValueLiteral="">
+          <eAnnotations xmi:id="_Jpr3rzV2EeOyxYxsSYU4rQ" source="http://www.eclipse.org/emf/2002/GenModel">
+            <details xmi:id="_Jpr3sDV2EeOyxYxsSYU4rQ" key="documentation" value="Indicates the mapping from model to view."/>
+          </eAnnotations>
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <packageImport xmi:id="_15_5_1_f20035f_1230031347322_997125_1439_packageImportcreatedOnLoad">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML2_METAMODELS/UML2.metamodel.uml2#_m8qbA686EdiEh75YJ_3n8g"/>
+  </packageImport>
+  <packageImport xmi:id="_EfRZoK86EdieaYgxtVWN8QprimitiveTypesmapping">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML2_LIBRARIES/UML2PrimitiveTypes.library.uml2#_EfRZoK86EdieaYgxtVWN8Q"/>
+  </packageImport>
+  <packageImport xmi:id="_RjmyoK86EdieaYgxtVWN8QjavaPrimitiveTypesmapping">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML2_LIBRARIES/JavaPrimitiveTypes.library.uml2#_RjmyoK86EdieaYgxtVWN8Q"/>
+  </packageImport>
+  <ownedMember xmi:type="uml:Extension" xmi:id="_15_5_1_f20035f_1230450835555_980603_1439" memberEnd="_15_5_1_f20035f_1230450835555_335130_1441 _15_5_1_f20035f_1230450835555_736322_1440">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_15_5_1_f20035f_1230450835555_335130_1441" name="extension_FrontEndMapping" visibility="private" type="_15_5_1_f20035f_1230031347322_391318_1440" association="_15_5_1_f20035f_1230450835555_980603_1439" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_15_5_1_f20035f_1230450835555_768088_1443" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_15_5_1_f20035f_1230450835555_930901_1442"/>
+    </ownedEnd>
+  </ownedMember>
+  <ownedMember xmi:type="uml:Extension" xmi:id="_15_5_1_f20035f_1230031347323_174057_1442" memberEnd="_15_5_1_f20035f_1230031347323_737080_1444 _15_5_1_f20035f_1230031347323_444662_1448">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_15_5_1_f20035f_1230031347323_444662_1448" name="extension_FrontEndMapping" visibility="private" type="_15_5_1_f20035f_1230031347322_391318_1440" association="_15_5_1_f20035f_1230031347323_174057_1442" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_15_5_1_f20035f_1230031347324_801290_1458" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_15_5_1_f20035f_1230031347324_300168_1457"/>
+    </ownedEnd>
+  </ownedMember>
+  <ownedMember xmi:type="uml:Extension" xmi:id="_15_5_1_f20035f_1230031347322_368925_1441" memberEnd="_15_5_1_f20035f_1230031347323_785417_1447 _15_5_1_f20035f_1230031347323_358881_1443">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_15_5_1_f20035f_1230031347323_785417_1447" name="extension_FrontEndMapping" visibility="private" type="_15_5_1_f20035f_1230031347322_391318_1440" association="_15_5_1_f20035f_1230031347322_368925_1441" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_15_5_1_f20035f_1230031347324_944278_1456" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_15_5_1_f20035f_1230031347324_271841_1455"/>
+    </ownedEnd>
+  </ownedMember>
+  <ownedMember xmi:type="uml:Stereotype" xmi:id="_15_5_1_f20035f_1230031347322_391318_1440" name="FrontEndMapping">
+    <ownedAttribute xmi:id="_15_5_1_f20035f_1230031347323_358881_1443" name="base_Parameter" visibility="private" association="_15_5_1_f20035f_1230031347322_368925_1441">
+      <type xmi:type="uml:Class" href="pathmap://UML2_METAMODELS/UML2.metamodel.uml2#_m9C2dK86EdiEh75YJ_3n8g"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_15_5_1_f20035f_1230031347323_737080_1444" name="base_Property" visibility="private" association="_15_5_1_f20035f_1230031347323_174057_1442">
+      <type xmi:type="uml:Class" href="pathmap://UML2_METAMODELS/UML2.metamodel.uml2#_m9C1la86EdiEh75YJ_3n8g"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_15_5_1_f20035f_1230031347323_408839_1445" name="@andromda.jcf.mapping.toModel" visibility="private">
+      <ownedComment xmi:id="_15_5_1_f20035f_1230031347324_915267_1450" body="Indicates the mapping from view to model." annotatedElement="_15_5_1_f20035f_1230031347323_408839_1445"/>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML2_LIBRARIES/UML2PrimitiveTypes.library.uml2#_IXlH8a86EdieaYgxtVWN8Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_15_5_1_f20035f_1230031347324_323403_1451" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_15_5_1_f20035f_1230031347323_853012_1449" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_15_5_1_f20035f_1230031347323_650627_1446" name="@andromda.jcf.mapping.toView" visibility="private">
+      <ownedComment xmi:id="_15_5_1_f20035f_1230031347324_523085_1453" body="Indicates the mapping from model to view." annotatedElement="_15_5_1_f20035f_1230031347323_650627_1446"/>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML2_LIBRARIES/UML2PrimitiveTypes.library.uml2#_IXlH8a86EdieaYgxtVWN8Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_15_5_1_f20035f_1230031347324_126679_1454" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_15_5_1_f20035f_1230031347324_392348_1452" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_15_5_1_f20035f_1230450835555_736322_1440" name="base_Transition" visibility="private" association="_15_5_1_f20035f_1230450835555_980603_1439">
+      <type xmi:type="uml:Class" href="pathmap://UML2_METAMODELS/UML2.metamodel.uml2#_m9VKGK86EdiEh75YJ_3n8g"/>
+    </ownedAttribute>
+  </ownedMember>
+</uml:Profile>

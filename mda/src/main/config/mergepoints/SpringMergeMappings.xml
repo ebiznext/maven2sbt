@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<mappings name="SpringMerge">
+    <mapping>
+    	<from><![CDATA[<!-- applicationContext merge-point -->]]></from>
+    	<to>
+    		<![CDATA[<!-- applicationContext merge-point -->]]>
+    	</to>
+    </mapping>
+    <mapping>
+    	<from><![CDATA[<!-- beanRefFactory merge-point -->]]></from>
+    	<to><![CDATA[<!-- beanRefFactory merge-point -->]]></to>
+    </mapping>
+    <!-- cartridge-template merge-point -->
+    <mapping>
+        <from><![CDATA[<!-- cartridge-template merge-point -->]]></from>
+        <to><![CDATA[
+    <template
+        path="templates/spring/SpringWebServiceDelegator2.vsl"
+        outputPattern="$generatedFile"
+        outlet="services"
+        overwrite="true">
+        <modelElements variable="service">
+            <modelElement>
+                <type name="org.andromda.cartridges.spring.metafacades.SpringService">
+                    <property name="webService"/>
+                </type>
+            </modelElement>
+        </modelElements>
+    </template>
+        ]]></to>
+    </mapping>
+</mappings>

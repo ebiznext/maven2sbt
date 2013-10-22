@@ -1,0 +1,103 @@
+<andromda xmlns="http://andromda.org/core/configuration">
+	<properties>
+		<property name="modelValidation">${validation}</property>
+		<property name="cartridgeFilter">${filter}</property>
+	</properties>
+	<!-- 
+	<server>
+		<host>localhost</host>
+		<port>4447</port>
+	</server>
+	 -->
+	<repositories>
+		<repository name="emf-uml2">
+			<models>
+				<model type="emf-uml2" lastModifiedCheck="${lastModifiedCheck}">
+					<uri>${model.uri}</uri>
+					<modelPackages processAll="true" />
+				</model>
+			</models>
+		</repository>
+	</repositories>
+	<namespaces>
+		<namespace name="default">
+			<properties>
+                <property name="xmlEncoding">UTF-8</property>
+                <property name="mergeLocation">${conf.dir}</property>
+                <property name="languageMappingsUri">file:${conf.dir}/mappings/JavaExtMappings.xml</property>
+                <property name="wrapperMappingsUri">JavaWrapper</property>
+                <property name="sqlMappingsUri">${sql.mappings}</property>
+                <property name="jdbcMappingsUri">JDBC</property>
+                <property name="maxSqlNameLength">30</property>
+                <property name="foreignKeySuffix">_FK</property>
+                <property name="ejbJndiNamePrefix">${application.id}-${version}</property>
+                <!-- these masking properties allow you to configure the way
+                    your model element names are generated -->
+                <property name="classifierNameMask">none</property>
+                <property name="operationNameMask">none</property>
+                <property name="roleNameMask">none</property>
+                <property name="enumerationNameMask">none</property>
+                <property name="enumerationLiteralNameMask">upperunderscore</property>
+                <property name="entityNameMask">none</property>
+                <property name="entityPropertyNameMask">none</property>
+                <property name="parameterNameMask">none</property>
+                <property name="hibernateVersion">3</property>
+			</properties>
+		</namespace>
+        <namespace name="spring">
+            <properties>
+                <property name="transactionManager">org.springframework.transaction.jta.JtaTransactionManager</property>
+                <property name="transactionManagerName">java:/TransactionManager</property>
+                <property name="userTransactionName">UserTransaction</property>
+
+                <property name="springTypesPackage">${application.package}</property>
+                <property name="daos">${core.generated.dir}</property>
+                <property name="dao-impls">${core.manual.dir}</property>
+                <property name="spring-configuration">${core.resources.dir}</property>
+                <property name="services">${core.generated.dir}</property>
+                <property name="service-impls">${core.manual.dir}</property>
+                <property name="service-interfaces">${common.generated.dir}</property>
+                <property name="criteria">${common.generated.dir}</property>
+                <property name="value-objects">${common.generated.dir}</property>
+                <property name="javaTypeConversionIgnoreList">java.util.Date,java.sql.Timestamp,java.sql.Date</property>
+                <property name="applicationContext">${application.id}Context.xml</property>
+                <property name="beanRefFactory">${application.id}BeanRefFactory.xml</property>
+                <property name="beanRefFactoryId">${application.id}BeanRefFactory</property>
+                <property name="mergeMappingsUri">file:${conf.dir}/mergePoints/SpringMergeMappings.xml</property>
+                <!--
+                <property name="acegiServiceSecurity">true</property>
+                <property name="acegiAuthenticationManager">authenticationManager</property>
+                <property name="acegiRolePrefix">${acegi.role.prefix}</property>
+                //-->
+            </properties>
+        </namespace>
+        <namespace name="webservice">
+            <properties>
+                <property name="soapStack">xfire</property>
+                <property name="schemaTypeMappingsUri">file:${conf.dir}/mappings/AxisWSDLExtMappings.xml</property>
+                <property name="languageMappingsUri">file:${conf.dir}/mappings/AxisJavaExtMappings.xml</property>
+                <property name="mergeMappingsUri">file:${conf.dir}/mergePoints/WebServiceMergeMappings.xml</property>
+                <property name="defaultProvider">RPC</property>
+                <property name="applicationName">${application.id}</property>
+                <property name="wsdlSoapAddress">http://${webservice.host}:${webservice.port}/${application.id}/services</property>
+                <property name="webserviceTypesPackage">${application.package}</property>
+                <property name="rpcClassNamePattern">{0}.{1}WSDelegator</property>
+                <property name="wsdls">${webservice.generated.dir}</property>
+                <property name="configuration">${webservice.generated.dir}</property>
+                <property name="webservice-types">${core.generated.dir}</property>
+                <property name="sessionTimeout">${sessionTimeout}</property>
+                <property name="securityRealm">Realm</property>
+            </properties>
+        </namespace>
+        <namespace name="java">
+            <properties>
+                <property name="languageMappingsUri">file:${conf.dir}/mappings/JavaExtMappings.xml</property>
+                <property name="useArraysForMultiplicitiesOfTypeMany">true</property>
+                <property name="enumerations">${common.generated.dir}</property>
+                <property name="exceptions">${common.generated.dir}</property>
+                <property name="value-objects">${common.generated.dir}</property>
+                <property name="interfaces">${common.generated.dir}</property>
+            </properties>
+        </namespace>
+	</namespaces>
+</andromda>

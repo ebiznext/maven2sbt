@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<mappings name="JavaExt"> 
+    <extends>Java</extends> 
+    <mapping> 
+        <from>datatype::String</from> 
+        <to>java.lang.String</to> 
+    </mapping>  
+    <mapping> 
+        <from>datatype::Date</from> 
+        <to>java.util.Date</to> 
+    </mapping>  
+    <mapping> 
+        <from>datatype::DateTime</from> 
+        <to>java.util.Date</to> 
+    </mapping>  
+</mappings>   
