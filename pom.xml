@@ -490,4 +490,15 @@
 		<http.version>4.2.1</http.version>
 		<jetty.version>8.1.8.v20121106</jetty.version>
 	</properties>
+
+    <pluginRepositories>
+    	<pluginRepository>
+    		<id>soapui-repo</id>
+    		<url>http://www.soapui.org/repository/maven2/</url>
+    		<layout>default</layout>
+    		<snapshots>
+    			<enabled>false</enabled>
+    		</snapshots>
+    	</pluginRepository>
+    </pluginRepositories>
 </project>
