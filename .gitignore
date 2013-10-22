@@ -39,3 +39,9 @@ web/.cache
 web/.classpath
 
 web/.project
+
+core/src/main/resources/sampleBeanRefFactory.xml
+
+core/src/main/resources/sampleContext.xml
+
+scalastyle-config.xml
