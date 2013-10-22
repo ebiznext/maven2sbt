@@ -11,3 +11,31 @@ project/plugins/project/
 
 # Scala-IDE specific
 .scala_dependencies
+
+common/.cache
+
+common/.classpath
+
+common/.project
+
+common/.settings/org.eclipse.core.resources.prefs
+
+common/.settings/org.scala-ide.sdt.core.prefs
+
+core/.cache
+
+core/.classpath
+
+core/.project
+
+*.prefs
+
+mda/.classpath
+
+mda/.project
+
+web/.cache
+
+web/.classpath
+
+web/.project
