@@ -14,7 +14,8 @@ object commons {
       scalacOptions ++= Seq("-deprecation", "-feature"),
       resolvers += "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository",
       resolvers += "SOAPUI Repository" at "http://www.soapui.org/repository/maven2",
-      resolvers += "Sonatype Repository" at "https://oss.sonatype.org/content/groups/public"
+      resolvers += "Sonatype Repository" at "https://oss.sonatype.org/content/groups/public",
+      resolvers += "AndroMDA Repository" at "http://team.andromda.org/maven2"
   )
 
 }
