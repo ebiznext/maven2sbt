@@ -8,7 +8,7 @@ addSbtPlugin("com.ebiznext.sbt.plugins" % "sbt-cxf-wsdl2java" % "0.1.1")
 
 addSbtPlugin("com.ebiznext.sbt.plugins" % "sbt-soapui-mockservice" % "0.1.1")
 
-addSbtPlugin("com.ebiznext.sbt.plugins" % "sbt-groovy" % "0.1")
+addSbtPlugin("com.ebiznext.sbt.plugins" % "sbt-groovy" % "0.1.1")
 
 addSbtPlugin("com.ebiznext.sbt.plugins" % "sbt-andromda" % "0.1.2")
 
