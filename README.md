@@ -1,7 +1,7 @@
 maven2sbt
 =========
 
-This project has been created to illustrate my presentation [Maven To SBT](http://fr.slideshare.net/StephaneManciot/de-maven-sbt-scalaio-2013) at ScalaIO Paris 2013
+This project has been created to illustrate my presentation [From Maven To SBT](http://fr.slideshare.net/StephaneManciot/de-maven-sbt-scalaio-2013) at ScalaIO Paris 2013
 
 ## Build Maven Requirements
 
