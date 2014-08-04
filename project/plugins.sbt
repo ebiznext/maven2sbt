@@ -4,7 +4,7 @@ resolvers += "Sonatype Repository" at "https://oss.sonatype.org/content/groups/p
 
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.3.0")
 
-addSbtPlugin("com.ebiznext.sbt.plugins" % "sbt-cxf-wsdl2java" % "0.1.2")
+addSbtPlugin("com.ebiznext.sbt.plugins" % "sbt-cxf-wsdl2java" % "0.1.4")
 
 addSbtPlugin("com.ebiznext.sbt.plugins" % "sbt-soapui-mockservice" % "0.1.1")
 

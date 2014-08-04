@@ -16,7 +16,7 @@ object dependencies {
   )
 
   lazy val cxfDependencies = Seq(
-    "org.apache.cxf" % "cxf-rt-frontend-jaxrs" % "2.7.3"
+    "org.apache.cxf" % "cxf-rt-frontend-jaxrs" % "2.7.10"
   )
 
   lazy val hibernateDependencies = Seq(

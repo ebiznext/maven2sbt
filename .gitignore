@@ -47,3 +47,6 @@ core/src/main/resources/sampleContext.xml
 scalastyle-config.xml
 plugin/.classpath
 plugin/.project
+
+.idea/*
+sublime*
